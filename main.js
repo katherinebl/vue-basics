@@ -5,6 +5,8 @@ const app = new Vue({
     description: 'Vue is a progressive framework and is also super easy to learn :)',
     imageSrc: 'img/vue-green.jpeg',
     altName: 'Vue Logo Green',
-    url: 'https://vuejs.org/'
+    url: 'https://vuejs.org/',
+    inventory: 100,
+    onSale: true
   }
 });
