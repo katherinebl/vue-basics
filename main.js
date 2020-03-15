@@ -19,6 +19,7 @@ const app = new Vue({
         variantColor: 'Yellow'
       }
     ],
-    sizes: [20, 50, 80]
+    sizes: [20, 50, 80],
+    cart: 0
   }
 });
