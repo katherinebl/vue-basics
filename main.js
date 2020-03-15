@@ -12,12 +12,12 @@ const app = new Vue({
     variants: [
       {
         variantID: 1,
-        variantColor: 'Green',
+        variantColor: 'green',
         variantImage: 'img/vue-green.jpeg'
       },
       {
         variantID: 2,
-        variantColor: 'Yellow',
+        variantColor: 'yellow',
         variantImage: 'img/vue-yellow.png'
       }
     ],
@@ -28,7 +28,7 @@ const app = new Vue({
     addToCart: function() {
       this.cart += 1;
     },
-    removeItem: function() {
+    removeFromCart: function() {
       this.cart -= 1;
     },
     updateProduct: function(variantImage) {
