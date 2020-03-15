@@ -28,6 +28,22 @@
         <p v-else>Not available :(</p>
 
         <span v-if="onSale">On sale!</span>
+
+        <ul>
+          <li v-for="detail in details">{{detail}}</li>
+        </ul>
+
+        <p v-for="version in variants" :key="version.variantID">{{version.variantColor}}</p>
+
+        <ul>
+          <li v-for="size in sizes">{{size}}</li>
+        </ul>
+
+        <!-- <button v-on:click="cart += 1">Add to Cart</button>
+
+        <div class="cart">
+          <p>Cart( {{cart}} )</p>
+        </div> -->
       </div>
 
     </div>
