@@ -12,14 +12,24 @@ const app = new Vue({
     variants: [
       {
         variantID: 1,
-        variantColor: 'Green'
+        variantColor: 'Green',
+        variantImage: 'img/vue-green.jpeg'
       },
       {
         variantID: 2,
-        variantColor: 'Yellow'
+        variantColor: 'Yellow',
+        variantImage: 'img/vue-yellow.png'
       }
     ],
     sizes: [20, 50, 80],
     cart: 0
+  },
+  methods: {
+    addToCart: function() {
+      this.cart += 1;
+    },
+    updateProduct: function(variantImage) {
+      this.imageSrc = variantImage;
+    }
   }
 });
