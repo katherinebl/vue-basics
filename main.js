@@ -6,8 +6,8 @@ const app = new Vue({
     imageSrc: 'img/vue-green.jpeg',
     altName: 'Vue Logo Green',
     url: 'https://vuejs.org/',
-    inventory: 100,
-    onSale: false,
+    inventory: 50,
+    onSale: true,
     details: ["40 hours course", "100 spots", "Available online"],
     variants: [
       {
@@ -22,7 +22,10 @@ const app = new Vue({
       }
     ],
     sizes: [20, 50, 80],
-    cart: 0
+    cart: 0,
+    disabledButton: {
+      backgroundColor: 'grey'
+    }
   },
   methods: {
     addToCart: function() {
