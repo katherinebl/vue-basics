@@ -1,5 +1,11 @@
 // Register Main Component
 Vue.component('product', {
+  props: {
+    premium: {
+      type: Boolean,
+      required: true
+    }
+  },
   template: `
     <div class="product">
 
@@ -28,6 +34,7 @@ Vue.component('product', {
 
         <p v-if="!inStock" :style="{color: '#FF0000'}">Out of Stock :(</p>
         <p v-else :style="{color: '#84CF6A'}">Available! :)</p>
+        <p>User is premium: {{premium}}</p>
 
 
         <button @click="addToCart"
@@ -104,4 +111,7 @@ Vue.component('product', {
 
 const app = new Vue({
   el: '#app', 
+  data: {
+    premium: true
+  }
 });
