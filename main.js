@@ -1,9 +1,10 @@
 const app = new Vue({
   el: '#app',
   data: {
-    product: 'Vueee',
+    brand: 'Vue Mastery',
+    product: 'Loguis',
     description: 'Vue is a progressive framework and is also super easy to learn :)',
-    imageSrc: 'img/vue-green.jpeg',
+    selectedVariant: 0,
     altName: 'Vue Logo Green',
     url: 'https://vuejs.org/',
     inventory: 50,
@@ -28,14 +29,24 @@ const app = new Vue({
     }
   },
   methods: {
-    addToCart: function() {
+    addToCart() {
       this.cart += 1;
     },
-    removeFromCart: function() {
+    removeFromCart() {
       this.cart -= 1;
     },
-    updateProduct: function(variantImage) {
-      this.imageSrc = variantImage;
+    updateProduct(index) {
+      this.selectedVariant = index;
+      console.log(index);
+      
+    }
+  },
+  computed: {
+    title() {
+      return this.brand + ' ' + this.product
+    },
+    image() {
+      return this.variants[this.selectedVariant].variantImage;
     }
   }
 });
