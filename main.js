@@ -34,7 +34,7 @@ Vue.component('product', {
 
         <p v-if="!inStock" :style="{color: '#FF0000'}">Out of Stock :(</p>
         <p v-else :style="{color: '#84CF6A'}">Available! :)</p>
-        <p>User is premium: {{premium}}</p>
+        <p>Shipping {{shipping}}</p>
 
 
         <button @click="addToCart"
@@ -105,6 +105,12 @@ Vue.component('product', {
     },
     inStock() {
       return this.variants[this.selectedVariant].variantQuantity;
+    },
+    shipping() {
+      if(this.premium) {
+        return "Free"
+      } 
+      return 2.99
     }
   }
 })
@@ -112,6 +118,6 @@ Vue.component('product', {
 const app = new Vue({
   el: '#app', 
   data: {
-    premium: true
+    premium: false
   }
 });
