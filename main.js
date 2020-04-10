@@ -115,9 +115,26 @@ Vue.component('product', {
   }
 })
 
+// Challenge component
+Vue.component('product-details', {
+  props: {
+    details: {
+      type: Array,
+      required: false
+    }
+  },
+  template: `
+  <ul>
+    <li v-for="detail in details">{{detail}}</li>
+  </ul>
+  `
+})
+
 const app = new Vue({
   el: '#app', 
   data: {
-    premium: false
+    premium: false,
+    details: ['40 hours', 'online', 5000]
   }
 });
+
