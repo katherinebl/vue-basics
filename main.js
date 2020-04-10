@@ -7,22 +7,21 @@ const app = new Vue({
     selectedVariant: 0,
     altName: 'Vue Logo Green',
     url: 'https://vuejs.org/',
-    inventory: 50,
-    onSale: true,
     details: ["40 hours course", "100 spots", "Available online"],
     variants: [
       {
         variantID: 1,
         variantColor: 'green',
-        variantImage: 'img/vue-green.jpeg'
+        variantImage: 'img/vue-green.jpeg',
+        variantQuantity: 10
       },
       {
         variantID: 2,
         variantColor: 'yellow',
-        variantImage: 'img/vue-yellow.png'
+        variantImage: 'img/vue-yellow.png',
+        variantQuantity: 0
       }
     ],
-    sizes: [20, 50, 80],
     cart: 0,
     disabledButton: {
       backgroundColor: 'grey'
@@ -47,6 +46,9 @@ const app = new Vue({
     },
     image() {
       return this.variants[this.selectedVariant].variantImage;
+    },
+    inStock() {
+      return this.variants[this.selectedVariant].variantQuantity;
     }
   }
 });

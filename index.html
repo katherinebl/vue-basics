@@ -23,17 +23,6 @@
         <h1>{{title}}</h1>
 
         <p>{{description}}</p>
-        <p v-if="inventory > 10"
-           :style="{backgroundColor: '#84CF6A'}"
-          >Available</p>
-        <p v-else-if="inventory <= 10 && inventory > 0"
-          :style="{backgroundColor: 'yellow'}"
-          >Less than 10 spots available!</p>
-        <p v-else
-           :style="{textDecoration: 'line-through', backgroundColor: 'red'}"
-        >Not available</p>
-
-        <span v-if="onSale">On sale!</span>
 
         <ul>
           <li v-for="detail in details">{{detail}}</li>
@@ -47,13 +36,13 @@
         >
         </div>
 
-        <ul>
-          <li v-for="size in sizes">{{size}}</li>
-        </ul>
+        <p v-if="!inStock" :style="{color: '#FF0000'}">Out of Stock :(</p>
+        <p v-else :style="{color: '#84CF6A'}">Available! :)</p>
+
 
         <button @click="addToCart"
-                :disabled ="!onSale"
-                :class="{disabledButton: !onSale}"
+                :disabled ="!inStock"
+                :class="{disabledButton: !inStock}"
         >Add to Cart</button>
 
         <button @click="removeFromCart" 
